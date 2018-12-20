@@ -1,12 +1,9 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main extends Application {
+public class Main {
 	//Empty
 	private static Choice zero = new Choice("Zero",
 			new Attributes(0, 0, 0, 0),
@@ -216,11 +213,6 @@ public class Main extends Application {
 			"");
 
 	public static void main(String[] args) {
-		launch(args);
-	}
-
-	@Override
-	public void start(Stage primaryStage) throws Exception {
 		List<Choice> fatherMale = new ArrayList<Choice>(){{add(nobleMale); add(merchant); add(warrior); add(hunter); add(nomadMale); add(thief);}};
 		List<Choice> fatherFemale = new ArrayList<Choice>(){{add(nobleFemale); add(merchant); add(warrior); add(hunter); add(nomadFemale); add(thief);}};
 		List<Choice> earlyLife = new ArrayList<Choice>(){{add(page); add(apprentice); add(assistant); add(urchin); add(steppeChild);}};
