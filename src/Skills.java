@@ -78,6 +78,60 @@ public class Skills {
 		this.trade = trade;
 	}
 
+	@Override
+	public String toString() {
+		String result = "";
+		if(ironflesh > 0)
+			result += "Ironflesh[" + ironflesh + "], ";
+		if(powerStrike > 0)
+			result += "powerStrike[" + powerStrike + "], ";
+		if(ironflesh > 0)
+			result += "powerThrow[" + powerThrow + "], ";
+		if(powerDraw > 0)
+			result += "powerDraw[" + powerDraw + "], ";
+		if(weaponMaster > 0)
+			result += "weaponMaster[" + weaponMaster + "], ";
+		if(shield > 0)
+			result += "shield[" + shield + "], ";
+		if(athletics > 0)
+			result += "athletics[" + athletics + "], ";
+		if(riding > 0)
+			result += "riding[" + riding + "], ";
+		if(horseArchery > 0)
+			result += "horseArchery[" + horseArchery + "], ";
+		if(looting > 0)
+			result += "looting[" + looting + "], ";
+		if(trainer > 0)
+			result += "trainer[" + trainer + "], ";
+		if(tracking > 0)
+			result += "tracking[" + tracking + "], ";
+		if(tactics > 0)
+			result += "tactics[" + tactics + "], ";
+		if(pathFinding > 0)
+			result += "pathFinding[" + pathFinding + "], ";
+		if(spotting > 0)
+			result += "spotting[" + spotting + "], ";
+		if(inventoryManagement > 0)
+			result += "inventoryManagement[" + inventoryManagement + "], ";
+		if(woundManagement > 0)
+			result += "woundManagement[" + woundManagement + "], ";
+		if(surgery > 0)
+			result += "surgery[" + surgery + "], ";
+		if(firstAid > 0)
+			result += "firstAid[" + firstAid + "], ";
+		if(engineer > 0)
+			result += "engineer[" + engineer + "], ";
+		if(persuasion > 0)
+			result += "persuasion[" + persuasion + "], ";
+		if(prisonerManagement > 0)
+			result += "prisonerManagement[" + prisonerManagement + "], ";
+		if(leadership > 0)
+			result += "leadership[" + leadership + "], ";
+		if(trade > 0)
+			result += "trade[" + trade + "]";
+		return result;
+	}
+
 	public static Skills add(Skills a, Skills b) {
 		Skills result = new Skills();
 		result.ironflesh = a.ironflesh + b.ironflesh;

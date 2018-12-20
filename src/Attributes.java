@@ -54,6 +54,14 @@ public class Attributes {
 		return strength + agility + intelligence + charisma;
 	}
 
+	public int getModTotal() {
+		return (strength / 3) + (agility / 3) + (intelligence / 3) + (charisma / 3);
+	}
+
+	public float getModTotalFloat() {
+		return (strength / 3f) + (agility / 3f) + (intelligence / 3f) + (charisma / 3f);
+	}
+
 	@Override
 	public String toString() {
 		return "[" + strength + "], [" + agility + "], [" + intelligence + "], [" + charisma + "]";

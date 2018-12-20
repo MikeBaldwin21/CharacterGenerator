@@ -1,8 +1,12 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+public class Main extends Application {
 	//Empty
 	private static Choice zero = new Choice("Zero",
 			new Attributes(0, 0, 0, 0),
@@ -212,6 +216,11 @@ public class Main {
 			"");
 
 	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
 		List<Choice> fatherMale = new ArrayList<Choice>(){{add(nobleMale); add(merchant); add(warrior); add(hunter); add(nomadMale); add(thief);}};
 		List<Choice> fatherFemale = new ArrayList<Choice>(){{add(nobleFemale); add(merchant); add(warrior); add(hunter); add(nomadFemale); add(thief);}};
 		List<Choice> earlyLife = new ArrayList<Choice>(){{add(page); add(apprentice); add(assistant); add(urchin); add(steppeChild);}};
@@ -229,6 +238,31 @@ public class Main {
 				}
 			}
 		}
+
+		List<Choice> maleSortedOnAttributeTotal = new ArrayList<>(allChoices);
+		maleSortedOnAttributeTotal.sort(Comparator.comparingInt(o2 -> o2.getAttributes().getTotal()));
+		Collections.reverse(maleSortedOnAttributeTotal);
+
+		List<Choice> maleSortedOnAttributeModTotal = new ArrayList<>(allChoices);
+		maleSortedOnAttributeModTotal.sort(Comparator.comparingInt(o2 -> o2.getAttributes().getModTotal()));
+		Collections.reverse(maleSortedOnAttributeModTotal);
+
+		List<Choice> maleSortedByStrength = new ArrayList<>(allChoices);
+		maleSortedByStrength.sort(Comparator.comparingInt(o -> o.getAttributes().getStrength()));
+		Collections.reverse(maleSortedByStrength);
+
+		List<Choice> maleSortedByAgility = new ArrayList<>(allChoices);
+		maleSortedByAgility.sort(Comparator.comparingInt(o -> o.getAttributes().getAgility()));
+		Collections.reverse(maleSortedByAgility);
+
+		List<Choice> maleSortedByIntelligence = new ArrayList<>(allChoices);
+		maleSortedByIntelligence.sort(Comparator.comparingInt(o -> o.getAttributes().getIntelligence()));
+		Collections.reverse(maleSortedByIntelligence);
+
+		List<Choice> maleSortedByCharisma = new ArrayList<>(allChoices);
+		maleSortedByCharisma.sort(Comparator.comparingInt(o -> o.getAttributes().getCharisma()));
+		Collections.reverse(maleSortedByCharisma);
+
 		for(Choice iFather : fatherFemale) {
 			for(Choice iEarlyLife : earlyLife) {
 				for(Choice iAdulthood : adulthoodFemale) {
@@ -238,9 +272,5 @@ public class Main {
 				}
 			}
 		}
-
-		List<Choice> sortedOnTotalAttributes = new ArrayList<>(allChoices);
-		Collections.sort(sortedOnTotalAttributes);
-		Collections.reverse(sortedOnTotalAttributes);
 	}
 }

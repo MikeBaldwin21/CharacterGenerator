@@ -1,4 +1,4 @@
-public class Choice implements Comparable<Choice> {
+public class Choice {
 	private String name;
 	private Attributes attributes;
 	private Skills skills;
@@ -27,6 +27,26 @@ public class Choice implements Comparable<Choice> {
 		proficiencies.setThrowing(proficiencies.getThrowing() + attributes.getAgility() * 5);
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public Attributes getAttributes() {
+		return attributes;
+	}
+
+	public Skills getSkills() {
+		return skills;
+	}
+
+	public Proficiencies getProficiencies() {
+		return proficiencies;
+	}
+
+	public String getEquipement() {
+		return equipement;
+	}
+
 	public static Choice add(Choice a, Choice b) {
 		Choice result = new Choice();
 		result.name = a.name + " + " + b.name;
@@ -40,10 +60,5 @@ public class Choice implements Comparable<Choice> {
 	@Override
 	public String toString() {
 		return attributes.toString();
-	}
-
-	@Override
-	public int compareTo(Choice o) {
-		return Integer.compare(this.attributes.getTotal(), o.attributes.getTotal());
 	}
 }
