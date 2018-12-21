@@ -1,3 +1,5 @@
+package Baldwin;
+
 public class Attributes {
 	private int strength;
 	private int agility;
@@ -22,32 +24,16 @@ public class Attributes {
 		return strength;
 	}
 
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
 	public int getAgility() {
 		return agility;
-	}
-
-	public void setAgility(int agility) {
-		this.agility = agility;
 	}
 
 	public int getIntelligence() {
 		return intelligence;
 	}
 
-	public void setIntelligence(int intelligence) {
-		this.intelligence = intelligence;
-	}
-
 	public int getCharisma() {
 		return charisma;
-	}
-
-	public void setCharisma(int charisma) {
-		this.charisma = charisma;
 	}
 
 	public int getTotal() {
@@ -69,10 +55,10 @@ public class Attributes {
 
 	public static Attributes add(Attributes a, Attributes b) {
 		Attributes result = new Attributes();
-		result.strength = a.strength + b.strength;
-		result.agility = a.agility + b.agility;
-		result.intelligence = a.intelligence + b.intelligence;
-		result.charisma = a.charisma + b.charisma;
+		result.strength = a.getStrength() + b.getStrength();
+		result.agility = a.getAgility() + b.getAgility();
+		result.intelligence = a.getIntelligence() + b.getIntelligence();
+		result.charisma = a.getCharisma() + b.getCharisma();
 		return result;
 	}
 }
